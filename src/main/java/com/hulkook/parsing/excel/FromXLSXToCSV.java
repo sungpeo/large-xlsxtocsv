@@ -22,10 +22,22 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-/**
- * Convert from xlsx to csv, using stream
- *
- */
+/* ====================================================================
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+==================================================================== */
 public class FromXLSXToCSV {
 
     private static final String SAX_PARSER = "org.apache.xerces.parsers.SAXParser";
@@ -208,7 +220,7 @@ public class FromXLSXToCSV {
                 }
             } else {
                 try {
-                    addMissedDelimtersForBlankCell(outputStream);
+                    addMissedDelimitersForBlankCell(outputStream);
                     countColumns();
                     outputStream.write((this.delimiterForCell + currentContent).getBytes(OUTPUT_CHARACTER_SET));
 
@@ -274,7 +286,7 @@ public class FromXLSXToCSV {
             cellRef = currentCellRef;
         }
 
-        private void addMissedDelimtersForBlankCell(OutputStream outputStream) throws IOException {
+        private void addMissedDelimitersForBlankCell(OutputStream outputStream) throws IOException {
             while(this.distance-->1){
                 countColumns();
                 outputStream.write((this.delimiterForCell).getBytes(OUTPUT_CHARACTER_SET));
