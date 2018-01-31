@@ -3,9 +3,9 @@ Using stream, it converts xlsx files to csv files which you can define delimiter
 
 I added several methods for handling excel files carefully.
 Such as
-addMissedDelimitersIfItIsNotACell
-addMissedDelimitersForBlankCell
-addMissedDelimitersAtTheEnd
+* addMissedDelimitersIfItIsNotACell
+* addMissedDelimitersForBlankCell
+* addMissedDelimitersAtTheEnd
 
 References :
 https://poi.apache.org/spreadsheet/limitations.html
